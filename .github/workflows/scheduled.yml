@@ -41,7 +41,7 @@ concurrency:
 jobs:
   scan:
     if: github.event_name != 'schedule' || vars.ENABLE_SCHEDULE == '1'
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2404
     timeout-minutes: 355   # platform hard cap is 360; stay just under
     env:
       # comma-separated token pool (each token = its own rate buckets).
